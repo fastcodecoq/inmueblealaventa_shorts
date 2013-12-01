@@ -43,7 +43,7 @@ Retorna un JSON:
 
 ```json
 {
-  "success" = "yep | nope",
+  "success" : "yep | nope",
   "rs" : {
   	   "short" : "SHORT_CREADO"
       }	
