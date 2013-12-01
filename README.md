@@ -5,10 +5,11 @@ INMUEBLE A LA VENTA SHORT APPS
 Desarrollado por Gomosoft
 
 
+___________
 
 
 USO
-===
+---
 
 
 Para obtener el short especifico de un inmueble, debemos hacer el request (GET) a la URL:
