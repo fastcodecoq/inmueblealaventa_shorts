@@ -42,7 +42,7 @@ class shorts{
 	     );
 
 
-		   $this->prefix = ($prefix === NULL) ? "/inmueble/s/" : $prefix;
+		   $this->prefix = ($prefix === NULL) ? "/inmueble/s" : $prefix;
 
 		  if(!$this->storage->exists("shorts"))  $this->ini();          
   
@@ -133,7 +133,7 @@ class shorts{
   	  	  if(count($short) > 0)
   	  	    return $this->prefix . "/" . $short[0]["short"]; 
   	  	  else 
-  	  	    throw new db_controller_exception("No se pudo encontrar el short para {$id}", 107);
+  	  	    throw new db_controller_exception("No se pudo encontrar el short para ({$id})", 107);
 
   }
 
@@ -223,7 +223,12 @@ class shorts{
 
 
 function success($rs){
+
+	if(!isset($_GET["direct"]))
 	echo json_encode(array("success" => "yep" , "rs" => $rs));
+    else
+    echo $rs["short"];
+
 }
 
 
