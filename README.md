@@ -27,7 +27,7 @@ Ejemplo de uso
 
 lo anterior resultará con un href, al final de la carga del documento así:
 
-```
+```html
 <a href="/inmueble/s/casa/venta/bogota/2-habitaciones-1-garajes-2-baños[70]">Ver inmueble</a>
 ```
 
