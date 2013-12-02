@@ -41,7 +41,7 @@ lo anterior resultará con un href, al final de la carga del documento así:
 
 
 
-*Para salvar un short de un nuevo inmuble creado, debemos hacer un reques (GET) al la URL:*
+*Para salvar un short de un nuevo inmuble creado, debemos hacer un request (GET) al la URL:*
 
 ```
 GET  /short/post/id_inmuble

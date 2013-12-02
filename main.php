@@ -42,7 +42,7 @@ class shorts{
 	     );
 
 
-		   $this->prefix = ($prefix === NULL) ? "/inmueble/s" : $prefix;
+		   $this->prefix = ($prefix === NULL) ? "/inmuebl/s" : $prefix;
 
 		  if(!$this->storage->exists("shorts"))  $this->ini();          
   
@@ -133,7 +133,12 @@ class shorts{
   	  	  if(count($short) > 0)
   	  	    return $this->prefix . "/" . $short[0]["short"]; 
   	  	  else 
-  	  	    throw new db_controller_exception("No se pudo encontrar el short para ({$id})", 107);
+  	  	    {
+  	  	    	if($short = $this->save($data))
+  	  	    		return str_replace("{{s}}", "", $short);
+  	  	    	else
+  	  	    		throw new db_controller_exception("No se pudo encontrar el short para ({$id})", 107);
+  	  	    }
 
   }
 
@@ -194,7 +199,7 @@ class shorts{
 				if($row[$map["garaje"]] > 0) 
 					$short[] = $row[$map["garaje"]] . "-garajes";
 				if($row[$map["baños"]] > 0) 
-					$short[] = $row[$map["baños"]] . "-baños";				
+					$short[] = $row[$map["baños"]] . "-banios";				
 
 				$short = $slash . "/" . implode("-",$short) . "[" . $row["id"] . "]";
 
@@ -207,7 +212,7 @@ class shorts{
 
 				$short = array(
 				 
-				  "short" => utf8_decode($short)."{{s}}",		     	
+				  "short" => utf8_decode($short) . "{{s}}",		     	
 				  "tipo_neg" =>  $row["tipo_neg"]."{{d}}",
 				  "citie" => $row["ciudad"]."{{d}}",
 				  "inmueble_id" => $row["id"]."{{d}}"				  
@@ -267,6 +272,11 @@ function void_main(){
 	        	if($short = $shorter->get($_GET["GET"]))
 	        		 success(array("short" => utf8_decode($short)));
 	       	  
+	       	if(isset($_GET["city"]))
+	       		if($city = $shorter->get_city_name( (int) $_GET["city"]))
+	       			 echo $city;
+	       		else
+	       			throw new db_controller_exception("No se pudo obtener la ciudad");
 
 
 
