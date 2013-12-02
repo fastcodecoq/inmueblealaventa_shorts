@@ -34,9 +34,14 @@ lo anterior resultará con un href, al final de la carga del documento así:
 <a href="/inmuebl/s/casa/venta/bogota/2-habitaciones-1-garajes-2-baños[70]">Ver inmueble</a>
 ```
 
+==
+
+
 
 >Por defecto se crea un nuevo short en caso de que se solicite y este no exista (short del inmueble), el app creará el nuevo short para el id del inmueble solicitado
 
+
+====
 
 
 **crear short manualmente de un nuevo inmuble creado, debemos hacer un request (GET) al la URL:**
