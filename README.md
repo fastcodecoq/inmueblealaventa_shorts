@@ -35,7 +35,7 @@ lo anterior resultará con un href, al final de la carga del documento así:
 ```
 
 
-*Por defecto se crea un nuevo short en caso de que se solicite y este no exista (short del inmueble), el app creará el nuevo short para el id del inmueble solicitado*
+>Por defecto se crea un nuevo short en caso de que se solicite y este no exista (short del inmueble), el app creará el nuevo short para el id del inmueble solicitado
 
 
 
@@ -165,7 +165,7 @@ TEAM
 
 Developers
 
-Javier Gómez (@gomosoft)
+Javier Gómez ([@gomosoft](https://twitter.com/gomosoft))
 
 
 
