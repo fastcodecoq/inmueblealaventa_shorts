@@ -1,18 +1,14 @@
-INMUEBLE A LA VENTA SHORT APPS
-==============================
+INMUEBLE A LA VENTA SHORT APP
+=============================
 
 
-Desarrollado por Gomosoft
-
-
-___________
 
 
 USO
 ---
 
 
-*Para obtener el short especifico de un inmueble, debemos hacer el request (GET) a la URL:*
+**Para obtener el short especifico de un inmueble, debemos hacer el request (GET) a la URL:**
 
 ```
 GET /short/direct/id_inmueble
@@ -39,9 +35,11 @@ lo anterior resultará con un href, al final de la carga del documento así:
 ```
 
 
+*Por defecto se crea un nuevo short en caso de que se solicite y este no exista (short del inmueble), el app creará el nuevo short para el id del inmueble solicitado*
 
 
-*Para salvar un short de un nuevo inmuble creado, debemos hacer un request (GET) al la URL:*
+
+**crear short manualmente de un nuevo inmuble creado, debemos hacer un request (GET) al la URL:**
 
 ```
 GET  /short/post/id_inmuble
@@ -161,6 +159,13 @@ Ejemplo desde javascript con Ajax + jQuery
 ```
 
 
+
+TEAM
+----
+
+Developers
+
+Javier Gómez (@gomosoft)
 
 
 
