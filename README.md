@@ -12,7 +12,7 @@ USO
 ---
 
 
-Para obtener el short especifico de un inmueble, debemos hacer el request (GET) a la URL:
+*Para obtener el short especifico de un inmueble, debemos hacer el request (GET) a la URL:*
 
 ```
 GET /short/direct/id_inmueble
@@ -21,21 +21,27 @@ GET /short/direct/id_inmueble
 Ejemplo de uso
 
 ```html
-<a href="/shor/direct/70">Ver inmueble</a>
+<a href="/short/direct/70">Ver inmueble</a>
 ```
 
+Retorna un String:
+
+```javascript
+   "/inmuebl/s/casa/venta/bogota/2-habitaciones-1-garajes-2-baños[70]"
+```
 
 
 
 lo anterior resultará con un href, al final de la carga del documento así:
 
 ```html
-<a href="/inmueble/s/casa/venta/bogota/2-habitaciones-1-garajes-2-baños[70]">Ver inmueble</a>
+<a href="/inmuebl/s/casa/venta/bogota/2-habitaciones-1-garajes-2-baños[70]">Ver inmueble</a>
 ```
 
 
 
-Para salvar un short de un nuevo inmuble creado, debemos hacer un reques (GET) al la URL:
+
+*Para salvar un short de un nuevo inmuble creado, debemos hacer un reques (GET) al la URL:*
 
 ```
 GET  /short/post/id_inmuble
@@ -79,8 +85,9 @@ else
 
 ```
 
-Llamdo desde AJAX usando jsquery
+*Llamdo desde AJAX usando jQuery*
 
+Salvar short:
 
 ```javascript
   function on_success(rs){ if(rs.succcess === "yep") //creado else //no creado }
@@ -97,5 +104,63 @@ Llamdo desde AJAX usando jsquery
 
    });
 ```
+
+Obetenr short de un inmueble especifico:
+
+
+```javascript
+  function on_success(rs){ if(rs.succcess === "yep") //obtenido else //no obtenido }
+  function on_error(error){ console.log(error.response_text) }
+
+  $.ajax({
+     
+      url : "/short/get/ID_DEL_INMUEBLE",
+      type : "GET",
+      dataType : "JSON",
+      async : false,
+      success : on_success,
+      error : on_error
+
+   });
+```
+
+*Algunas funcionalidades extras*
+
+
+Obtener nombre de la ciudad a partir del id:
+
+hacer un request GET, a la URL:
+
+```
+GET /city/AQUI_EL_CODIGO_DE_LA_CIUDAD
+```
+
+Retorna un String
+
+
+```javascript
+  "barranquilla"
+```
+
+Ejemplo desde javascript con Ajax + jQuery
+
+
+```javascript
+  function on_success(city_name){ if(city_name instanceof String) //obtenido  else //no obtenido }
+  function on_error(error){ console.log(error.response_text) }
+
+  $.ajax({
+     
+      url : "/city/ID_DE_LA_CIUDAD",
+      type : "GET",
+      async : false,
+      success : on_success,
+      error : on_error
+
+   });
+```
+
+
+
 
 
